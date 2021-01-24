@@ -9,10 +9,10 @@ public interface IBlogCommentsDao {
 	
 	List<BlogComments> getAllComments();
 	
-	BlogComments getBlogById(int blogId);
-	boolean addBlog(BlogComments blog);
-	boolean updateBlog(BlogComments blog);
-	boolean deleteBlog(BlogComments blog);
+	BlogComments getBlogById(int blogCommentsId);
+	boolean addBlogComments(BlogComments blogComments);
+	boolean updateBlogComments(BlogComments blogComments);
+	boolean deleteBlogComments(BlogComments blogComments);
 	
 
 }
