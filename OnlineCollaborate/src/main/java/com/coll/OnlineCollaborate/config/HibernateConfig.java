@@ -5,16 +5,29 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan(basePackages= {"com.coll.OnlineCollaborate"})
+@ComponentScans(value= {@ComponentScan("com.coll.OnlineCollaborate"),
+						@ComponentScan("model"),
+						@ComponentScan("controller"),
+						@ComponentScan("dao"),
+						@ComponentScan("miscallaneous"),
+						@ComponentScan("service")})
+
+@EnableAutoConfiguration(exclude= {HibernateJpaAutoConfiguration.class})
 @EnableTransactionManagement
 
 public class HibernateConfig {
@@ -35,26 +48,33 @@ public class HibernateConfig {
 		return dataSource;
 	}
 	
-	@Bean(name="sessionFactory")
-	public SessionFactory getSessionFactory() {
-		LocalSessionFactoryBuilder builder=new LocalSessionFactoryBuilder(getDataSource());
-		builder.addProperties(getHibernateProperties());
-		builder.scanPackages("com.coll.onlinecollaborate");
-		return builder.buildSessionFactory();
-	}
-	
-	public Properties getHibernateProperties() {
-		Properties props=new Properties();
-		props.put("hibernate.dialect",DATABASE_DIALECT);
-		props.put("hibernate.show_sql", "true");
-		props.put("hibernate.hbm2ddl.auto", "update");
-		props.put("hibernate.format_sql", "true");
-		return props;
+	@Bean
+	public LocalSessionFactoryBean getSessionFactory() {
+		
+		LocalSessionFactoryBean sessionFactory =new LocalSessionFactoryBean();
+		sessionFactory.setDataSource(getDataSource());
+		sessionFactory.setPackagesToScan("com.coll.onlineCollaborate");
+		Properties hibernateProperties = new Properties();
+		hibernateProperties.put("hibernate.dialect", DATABASE_DIALECT);
+		hibernateProperties.put("hibernate.show_sql", "true");
+		hibernateProperties.put("hibernate.hbm2ddl.auto", "update");
+		sessionFactory.setHibernateProperties(hibernateProperties);
+		return sessionFactory;
 	}
 	
 	@Bean
-	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
-		HibernateTransactionManager txm=new HibernateTransactionManager(sessionFactory);
+	public HibernateTransactionManager getTransactionManager() {
+		HibernateTransactionManager txm=new HibernateTransactionManager();
+		txm.setSessionFactory(getSessionFactory().getObject());
 		return txm;
+		
+	}
+	
+	@Bean
+	public ViewResolver jspViewResolver() {
+		InternalResourceViewResolver viewResolver=new InternalResourceViewResolver();
+		viewResolver.setPrefix("/views/");
+		viewResolver.setSuffix(".jsp");
+		return viewResolver;
 	}
 }
