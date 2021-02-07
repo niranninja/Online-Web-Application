@@ -38,11 +38,6 @@ public class BlogDaoImpl implements IBlogDao{
 		return null;
 	}
 
-	@Override
-	public List<Blog> mainList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Blog getBlogById(int blogId) {

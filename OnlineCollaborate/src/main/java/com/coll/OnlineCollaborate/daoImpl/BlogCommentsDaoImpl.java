@@ -37,4 +37,10 @@ public class BlogCommentsDaoImpl implements IBlogCommentsDao {
 		return false;
 	}
 
+	@Override
+	public List<BlogComments> getCommentsbyBlog(int blog) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

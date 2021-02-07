@@ -8,7 +8,7 @@ import com.coll.OnlineCollaborate.model.BlogComments;
 public interface IBlogCommentsDao {
 	
 	List<BlogComments> getAllComments();
-	
+	List<BlogComments> getCommentsbyBlog(int blog);
 	BlogComments getBlogCommentsById(int blogCommentsId);
 	boolean addBlogComments(BlogComments blogComments);
 	boolean updateBlogComments(BlogComments blogComments);
