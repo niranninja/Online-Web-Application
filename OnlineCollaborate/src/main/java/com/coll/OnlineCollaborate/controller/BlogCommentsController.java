@@ -26,29 +26,33 @@ public class BlogCommentsController {
 	IBlogCommentsService blogCommentsService;
 	
 	@PostMapping("save-blogComments")
-	public boolean saveBlogComments(@RequestBody BlogComments blogComments) {
+	public boolean saveBlogComments(@RequestBody BlogComments blogComments) 
+	{
 		return blogCommentsService.addBlogComments(blogComments);
 	}
 	
 	@GetMapping("blogComments-list")
-	public List<BlogComments> allBlogComments(){
+	public List<BlogComments> allBlogComments()
+	{
 		return blogCommentsService.getAllComments();
 	}
 	
-	@DeleteMapping("delete-blogComments/{blogComments_id}")
-	public boolean deleteBlogComments(@PathVariable("blogComments_id")BlogComments blogComments_id) {
-		return blogCommentsService.deleteBlogComments(blogComments_id);
+	@DeleteMapping("delete-blogComments/{blogCommentsId}")
+	public boolean deleteBlogComments(@PathVariable("blogCommentsId")BlogComments blogCommentsId) 
+	{
+		return blogCommentsService.deleteBlogComments(blogCommentsId);
 		
 	}
 	
-	@GetMapping("blogComments/{blogComments_id")
-	public BlogComments BlogCommentsById(@PathVariable("blogComments_id")int blogComments_id) {
-		return blogCommentsService.getBlogCommentsById(blogComments_id);
+	@GetMapping("blogComments/{blogCommentsId")
+	public BlogComments BlogCommentsById(@PathVariable("blogCommentsId")int blogCommentsId) 
+	{
+		return blogCommentsService.getBlogCommentsById(blogCommentsId);
 	}
 	
-	@PostMapping("update-blogComments/{blogComments_id}")
-	public boolean updateBlogComments(@RequestBody BlogComments blogComments,@PathVariable("blogComments_id")int blogComments_id) {
-		blogComments.setBlogCommentId(blogComments_id);
+	@PostMapping("update-blogComments/{blogComments}")
+	public boolean updateBlogComments(@PathVariable("blogComments")BlogComments blogComments)
+	{
 		return blogCommentsService.updateBlogComments(blogComments);
 	}
 }

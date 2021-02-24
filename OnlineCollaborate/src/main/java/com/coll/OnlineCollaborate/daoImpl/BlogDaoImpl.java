@@ -33,9 +33,10 @@ public class BlogDaoImpl implements IBlogDao{
 	}
 
 	@Override
-	public List<Blog> getUsersBlogs(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Blog> getUsersBlogs(int userId) {
+		String q="select blogTitle, blogContent from Blog where blogId='"+userId+"'";
+		Query query=sessionFactory.getCurrentSession().createQuery(q);
+		return query.getResultList();
 	}
 
 

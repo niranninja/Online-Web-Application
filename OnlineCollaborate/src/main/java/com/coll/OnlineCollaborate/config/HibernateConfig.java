@@ -24,7 +24,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 						@ComponentScan("model"),
 						@ComponentScan("controller"),
 						@ComponentScan("dao"),
-						@ComponentScan("miscallaneous"),
+						@ComponentScan("daoImpl"),
+						@ComponentScan("config"),
+						@ComponentScan("serviceImpl"),
 						@ComponentScan("service")})
 
 @EnableAutoConfiguration(exclude= {HibernateJpaAutoConfiguration.class})
@@ -32,7 +34,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 public class HibernateConfig {
 
-	public static final String DATABASE_URL="jbdc:mysql://localhost:3306/collaboration";
+	public static final String DATABASE_URL="jdbc:mysql://localhost:3306/collaboration";
 	public static final String DATABASE_DRIVER="com.mysql.cj.jdbc.Driver";
 	public static final String DATABASE_DIALECT="org.hibernate.dialect.MySQLDialect";
 	public static final String DATABASE_USERNAME="root";
@@ -53,7 +55,7 @@ public class HibernateConfig {
 		
 		LocalSessionFactoryBean sessionFactory =new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(getDataSource());
-		sessionFactory.setPackagesToScan("com.coll.onlineCollaborate");
+		sessionFactory.setPackagesToScan("com.coll.OnlineCollaborate");
 		Properties hibernateProperties = new Properties();
 		hibernateProperties.put("hibernate.dialect", DATABASE_DIALECT);
 		hibernateProperties.put("hibernate.show_sql", "true");

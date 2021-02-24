@@ -24,28 +24,32 @@ public class BlogController {
 	IBlogService blogService;
 	
 	@PostMapping("save-blog")
-	public boolean saveBlog(@RequestBody Blog blog) {
+	public boolean saveBlog(@RequestBody Blog blog)
+	{
 		return blogService.addBlog(blog);
 	}
 	
 	@GetMapping("blog-list")
-	public List<Blog> allBlogs(){
+	public List<Blog> allBlogs()
+	{
 		return blogService.getAllBlogs();
 	}
 	
-	@DeleteMapping("delete-blog/{blog_id}")
-	public boolean deleteBlog(@PathVariable("blog_id")Blog blog_id) {
-		return blogService.deleteBlog(blog_id);
+	@DeleteMapping("delete-blog/{blogId}")
+	public boolean deleteBlog(@PathVariable("blogId")Blog blogId)
+	{
+		return blogService.deleteBlog(blogId);
 	}
 	
-	@GetMapping("blog/{blog_id}")
-	public Blog BlogById(@PathVariable("blog_id")int blog_id) {
-		return blogService.getBlogById(blog_id);
+	@GetMapping("blog/{blogId}")
+	public Blog BlogById(@PathVariable("blogId")int blogId) 
+	{
+		return blogService.getBlogById(blogId);
 	}
 	
-	@PostMapping("update-blog/{blog_id}")
-	public boolean updateBlog(@RequestBody Blog blog,@PathVariable("blog_id")int blog_id) {
-		blog.setBlogId(blog_id);
+	@PostMapping("update-blog/{blog}")
+	public boolean updateBlog(@PathVariable("blog")Blog blog) 
+	{
 		return blogService.updateBlog(blog);
 	}
 	
