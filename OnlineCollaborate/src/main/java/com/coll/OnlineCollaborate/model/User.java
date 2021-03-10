@@ -75,13 +75,13 @@ public class User extends DomainResponse implements Serializable{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public boolean isOnline() {
+	public boolean getIsOnline() {
 		return isOnline;
 	}
-	public void setOnline(boolean isOnline) {
+	public void setIsOnline(boolean isOnline) {
 		this.isOnline = isOnline;
 	}
-	public boolean isEnabled() {
+	public boolean getenabled() {
 		return enabled;
 	}
 	public void setEnabled(boolean enabled) {
