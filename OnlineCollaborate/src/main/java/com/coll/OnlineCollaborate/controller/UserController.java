@@ -49,5 +49,14 @@ public class UserController {
 		user.setUserId(userId);
 		return userService.updateUser(user);
 	}
+	@GetMapping("deactive-list")
+	public List<User> AllDeactiveUser(){
+		return userService.getAllDeactiveUser();
+	}
+	
+	@PostMapping("activate-user/{userId}")
+	public boolean activateUser(@RequestBody User user, @PathVariable("userId") int userId) {
+		return userService.activateUser(userId);
+	}
 
 }

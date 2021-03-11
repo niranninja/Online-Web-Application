@@ -8,6 +8,7 @@ public interface IUserDao {
 
 	List<User> userListbyStatus(String status);
 	List<User> getAllUsers();
+	List<User> getAllDeactiveUser();
 	User getUserById(int userId);
 	User getUserByUsername(String username);
 	User validateUser(User user);
