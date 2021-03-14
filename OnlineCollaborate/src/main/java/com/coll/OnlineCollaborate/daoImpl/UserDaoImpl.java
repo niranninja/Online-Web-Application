@@ -45,7 +45,7 @@ public class UserDaoImpl implements IUserDao{
 	public User validateUser(User user) {
 		String username=user.getUserName();
 		String password=user.getPassword();
-		String q="from User where username='"+username+"' and password='"+password+"'";
+		String q="from User where username='"+username+"' and password='"+password+"'and enabled='true'";
 		Query query=sessionFactory.getCurrentSession().createQuery(q);
 		try {
 			user=(User)query.getSingleResult();
@@ -97,7 +97,7 @@ public class UserDaoImpl implements IUserDao{
 	public boolean deactivateUser(int userId) {
 		try {
 			User user=getUserById(userId);
-			user.setEnabled(false);
+			user.setEnabled("false");
 			sessionFactory.getCurrentSession().update(user);
 			return true;
 		}
@@ -128,7 +128,7 @@ public class UserDaoImpl implements IUserDao{
 	public boolean activateuser(int userId) {
 		try {
 			User user=getUserById(userId);
-			user.setEnabled(true);
+			user.setEnabled("true");
 			sessionFactory.getCurrentSession().update(user);
 			return true;
 		}
@@ -141,6 +141,20 @@ public class UserDaoImpl implements IUserDao{
 	@Override
 	public List<User> getAllDeactiveUser() {
 		return sessionFactory.getCurrentSession().createQuery("from User where enabled ='false'",User.class).getResultList();
+	}
+
+	@Override
+	public boolean logoutUser(int userId) {
+		try {
+			User user=getUserById(userId);
+			user.setIsOnline("false");
+			sessionFactory.getCurrentSession().update(user);
+			return true;
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
 	}
 
 }

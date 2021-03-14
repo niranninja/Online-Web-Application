@@ -25,8 +25,8 @@ public class User extends DomainResponse implements Serializable{
 	private String email;
 	private String role;
 	private String status;
-	private boolean isOnline;
-	private boolean enabled;
+	private String isOnline;
+	private String enabled;
 	public int getUserId() {
 		return userId;
 	}
@@ -75,16 +75,17 @@ public class User extends DomainResponse implements Serializable{
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public boolean getIsOnline() {
+	
+	public String getIsOnline() {
 		return isOnline;
 	}
-	public void setIsOnline(boolean isOnline) {
+	public void setIsOnline(String isOnline) {
 		this.isOnline = isOnline;
 	}
-	public boolean getenabled() {
+	public String getEnabled() {
 		return enabled;
 	}
-	public void setEnabled(boolean enabled) {
+	public void setEnabled(String enabled) {
 		this.enabled = enabled;
 	}
 	public static long getSerialversionuid() {

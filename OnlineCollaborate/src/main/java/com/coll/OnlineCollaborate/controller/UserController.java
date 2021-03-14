@@ -58,5 +58,10 @@ public class UserController {
 	public boolean activateUser(@RequestBody User user, @PathVariable("userId") int userId) {
 		return userService.activateUser(userId);
 	}
+	
+	@PostMapping("validate-user")
+	public User validateUser(@RequestBody User user) {
+		return userService.validateUser(user);
+	}
 
 }
