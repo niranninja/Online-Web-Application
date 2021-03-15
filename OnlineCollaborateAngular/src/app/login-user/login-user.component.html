@@ -1,0 +1,67 @@
+<mat-toolbar color="primary" class="container-fluid">
+  <mat-toolbar-row>
+    <span>Online Collaborate</span>
+    <span class="example-spacer"></span>
+    <section>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <button mat-icon-button aria-label="Home page" routerLink="/home">
+            <mat-icon>home</mat-icon>
+          </button>
+          <button mat-icon-button aria-label="Chat" routerLink="/about">
+            <mat-icon>chat_bubble</mat-icon>
+          </button>
+          <button mat-icon-button aria-label="Search">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Menu">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/login-user">
+              <mat-icon>login</mat-icon>
+              <span>Login</span>
+            </button>
+            <button mat-menu-item routerLink="/add-user">
+              <mat-icon>app_registration</mat-icon>
+              <span>Sign up</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="bgImage">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title class="card-header">Login</mat-card-title>
+      <mat-card-subtitle class="card-subtitle">Sign into your Space!!!</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="loginform" action="#" validateUser="ngForm" (ngSubmit)="validateUser()" class="form1" class="box">
+           <div>
+        <mat-form-field class="emailInput">
+          <mat-label>User Name</mat-label>
+          <input type="text" class="form-control" name="userName" matInput placeholder="User Name" formControlName="userName">
+        </mat-form-field>
+      </div>    
+      <div> 
+        <mat-form-field class="emailInput">
+          <mat-label>Enter your password</mat-label>
+          <input type="password" class="form-control" name="password" matInput [type]="hide ? 'password' : 'text'" formControlName="password" >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+       
+       </mat-form-field>
+      </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-raised-button color="primary" (click)="validateUser()">Login</button>
+    </mat-card-actions>
+  </mat-card>      
+</div>    

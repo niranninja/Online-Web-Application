@@ -1,0 +1,21 @@
+<div class="grid-container">
+    <h1 class="mat-h1">Dashboard</h1>
+    <mat-grid-list cols="2" rowHeight="350px">
+      <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+        <mat-card class="dashboard-card">
+          <mat-card-content class="dashboard-card-content">
+            <div>
+              <img src="../../assets/171-1717870_stockvader-predicted-cron-for-may-user-profile-icon-png.jpg" alt="Avatar">
+            </div>
+            <div>
+              <h2 class="profilename">User's Profile</h2>
+            </div>
+            <div>
+              <h2 class="profilename2">Online Collaborate</h2>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  

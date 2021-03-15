@@ -1,0 +1,195 @@
+  .bgimage{
+    background: url(../../assets/oc1.png)no-repeat center center;
+    background-size: 100%;
+    height: 77vh;
+    margin-left: 45px;
+    
+    
+  }
+
+  // Colors
+  $greenSeaweed: rgba(2, 128, 144, 1);
+  $blueQueen: rgba(69, 105, 144, 1);
+  $redFire: rgba(244, 91, 105, 1);
+  
+  // Fonts
+  $fontAsap: 'Asap', sans-serif;
+  
+  body {
+    background-color: $redFire;
+    font-family: $fontAsap;
+  }
+  
+  .login {
+    overflow: hidden;
+    background-color: white;
+    padding: 40px 30px 30px 30px;
+    border-radius: 50px;
+    position: absolute;
+    top: 60%;
+    left: 75%;
+    width: 400px;
+    height: 88vh;
+    transform:translate(-50%, -50%);
+    transition:transform 1ms, box-shadow 2ms;
+    box-shadow: 5px 10px 10px rgba($greenSeaweed, 0.2);
+    
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 55%;
+      border-bottom-left-radius: 35%;
+      border-bottom-right-radius: 40%;
+      z-index: -1;
+    }
+    
+    &::before {
+      left: 40%;
+      bottom: -25%;
+      background-color: rgba($blueQueen, 0.15);
+       animation:wawes 1s infinite linear;
+    }
+    
+    &::after {
+      left: 35%;
+      bottom: -35%;
+      background-color: rgba($greenSeaweed, 0.2);
+       animation: wawes 1s infinite;
+    }
+    
+     .input {
+      font-family: $fontAsap;
+      display: block;
+      border-radius: 5px;
+      font-size: 16px;
+      background: white;
+      width: 100%;
+      border: 0;
+      padding: 10px 10px;
+      margin: 15px -10px;
+    }
+    
+    .button {
+      font-family: $fontAsap;
+      cursor: pointer;
+      color: #fff;
+      font-size: 16px;
+      text-transform: uppercase;
+      width: 300px;
+      border: 0;
+      padding: 10px 0;
+      margin-top: 500%;
+      margin-left: -12px;
+      border-radius: 5px;
+      background-color: $redFire;
+      transition:background-color 600ms;
+      
+      &:hover {
+        background-color: darken($redFire, 5%);
+      }
+    }
+  }
+
+  
+  a {
+    text-decoration: none;
+    color: rgba(white, 0.6);
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 12px;
+  }
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+.mat-card-subtitle{
+  margin-left: 25%;
+}
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.navbar{
+  justify-content: space-between;
+}
+span{
+  padding-right: 1rem;
+}
+.navbar-spacer {
+  flex: 1 1 auto;
+}
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+section {
+  display: table;
+}
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 250px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+

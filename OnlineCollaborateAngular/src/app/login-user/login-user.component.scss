@@ -1,0 +1,140 @@
+.example-card {
+    max-width: 500px;
+    margin-left: 45%;
+    margin-top: 35%;
+  }
+.card-header{
+    margin-left: 115px;
+}
+
+.card-subtitle{
+    margin-left:95px;
+}
+.mat-card {
+    max-width: 550px;
+    margin: 2em;
+    text-align: center;
+    max-height: 600px;
+    margin-left: 65%;
+    margin-right: 2%;
+    margin-top: 10%;
+  }
+  
+  .header{
+    text-align: center;
+  
+  }
+  .full-width {
+    width: 80%;
+  }
+  
+  .button-row {
+    padding-top: 5px;
+  }
+  
+  .button-row a {
+    margin-right: 8px;
+    text-align: center;
+  }
+  
+  .forget-password{
+    padding-left: 0px;
+  }
+  
+  .emailInput{
+    padding-top: 10px;
+  }
+  
+  .contentBody {
+    padding: 60px 1rem;
+    background :#1b6ca8;
+    display: block;
+  }
+  
+  .aLink{
+    float: right;
+    padding-right: 60px;
+    text-decoration: none;
+  }
+  .bgImage{
+    background: url(../../assets/Signin.png)no-repeat center center;
+    background-size: 95%;
+    height: 77vh;
+    margin-left: 45px;
+    margin-bottom: 45%;
+    margin-right: 5%;
+    margin-top: 6%;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+.navbar{
+    justify-content: space-between;
+}
+span{
+    padding-right: 1rem;
+}
+.navbar-spacer {
+    flex: 1 1 auto;
+}
+.example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+}
+.example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}
+.example-button-row {
+    display: table-cell;
+    width: 490px;
+}
+.example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+}
+section {
+    display: table;
+}
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 250px;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  
+  
+  
+  

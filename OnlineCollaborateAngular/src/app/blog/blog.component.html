@@ -1,0 +1,25 @@
+<div>
+    <div>
+        <h2 style="margin-left: 5%; font-size: 34px; margin-top: 1%;">Post Your Thoughts</h2>
+    </div>
+    <mat-card class="card">
+        <form [formGroup]="blogpostform" (ngSubmit)="blogpost(blogpost)">
+            <mat-form-field style="margin-left: 25%;">
+                <mat-label>Add a Title to Your Post</mat-label>
+                <textarea matInput class="form-control" formControlName="blogTitle"></textarea>
+            </mat-form-field><br>
+            <mat-form-field class="blog">
+                <mat-label>Post Your Blog</mat-label>
+                <textarea matInput class="form-control" formControlName="blogContent"
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="10"
+                        cdkAutosizeMaxRows="250"></textarea>           
+            </mat-form-field>
+        </form>
+          <div>
+            <button mat-raised-button type="submit" class="Post" color="primary" click="blogpost(blogpost)">Post</button>
+            <button mat-raised-button class="Delete" color="primary" type="button">Delete</button>
+          </div>
+    </mat-card>
+</div>

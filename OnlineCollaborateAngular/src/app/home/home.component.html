@@ -1,0 +1,47 @@
+<mat-toolbar color="primary" class="container-fluid">
+    <mat-toolbar-row>
+      <span>Online Collaborate</span>
+      <span class="example-spacer"></span>
+      <section>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+            <button mat-icon-button aria-label="Home page" routerLink="/home">
+              <mat-icon>home</mat-icon>
+            </button>
+            <button mat-icon-button aria-label="Chat" routerLink="/about">
+              <mat-icon>chat_bubble</mat-icon>
+            </button>
+            <button mat-icon-button aria-label="Search">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Menu">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item routerLink="/login-user">
+                <mat-icon>login</mat-icon>
+                <span>Login</span>
+              </button>
+              <button mat-menu-item routerLink="/add-user">
+                <mat-icon>app_registration</mat-icon>
+                <span>Sign up</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <section class="home">
+    <img src="../../assets/Homeb.jpg">
+    <div class="home1content">
+      <h1>Welcome to Online Collaborate</h1>
+    <br>
+    <br>
+    <button style="margin-left: 30%;" mat-raised-button color="primary" class="button" routerLink="/about">About Us</button>
+    </div>
+</section>
+<section>
+
+</section>

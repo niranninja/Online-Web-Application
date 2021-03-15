@@ -1,0 +1,113 @@
+<div class="panel panel-default">  
+    <div class="panel-heading">  
+        <h1 style="text-align: center">Users List</h1><br>  
+        <div class="row" [hidden]="!deleteMessage">  
+               
+                  <div class="col-sm-4"></div>  
+                  <div class="col-sm-4">  
+                          <div class="alert alert-info alert-dismissible">  
+                                  <button type="button" class="close" data-dismiss="alert">×</button>  
+                                  <strong>User Data Deleted</strong>  
+                          </div>  
+                  </div>  
+                  <div class="col-sm-4"></div>  
+          </div>             
+      </div>  
+    
+      
+    <div class="panel-body">  
+        <table  class="table table-hover table-sm" >
+            <thead class="thead-light">  
+                <tr>  
+                    <th>Firstname</th>
+                    <th>lastname</th> 
+                    <th>Email</th>
+                    <th>Password</th>  
+                    <th>Status</th>
+                    <th>isOnline</th>
+                    <th>Enabled</th>
+                    <th>User Id</th>
+                    <th>Role</th>
+                    <th>Action</th>
+
+                       
+                </tr>  
+            </thead>  
+            <tbody>  
+                 <tr *ngFor="let user of users">  
+                    <td>{{user.firstName}}</td>  
+                    <td>{{user.lastName}}</td>  
+                    <td>{{user.email}}</td>  
+                    <td>{{user.password}}</td> 
+                    <td>{{user.status}}</td> 
+                    <td>{{user.isOnline}}</td>  
+                    <td>{{user.enabled}}</td>
+                    <td>{{user.userId}}</td>
+                    <td>{{user.role}}</td>
+                    <td><button (click)="deleteUser(user.userId)" mat-raised-button color="primary" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>
+                      <button (click)="updateUser(user.userId)" mat-raised-button color="primary" class='btn btn-info'  
+                      data-toggle="modal" data-target="#myModal">Update</button>  
+                    </td>  
+                  </tr>   
+            </tbody><br>  
+        </table>  
+    </div>  
+  </div>   
+    
+  <div class="modal" id="myModal">  
+          <div class="modal-dialog">  
+            <div class="modal-content">  
+                  <form [formGroup]="userupdateform" #updateUser (ngSubmit)="updateUsers(updateUsers)">  
+              <!-- Modal Header -->  
+              <div class="modal-header">  
+                <h4 class="modal-title" style="text-align: center">Update User</h4>  
+                  
+              </div>  
+                
+              <!-- Modal body -->  
+              <div class="modal-body" *ngFor="let user of users" >  
+                  <div [hidden]="isupdated">  
+    
+                      <input type="hidden" class="form-control"  formControlName="userId" [(ngModel)]="user.userId">  
+                            <div class="form-group">  
+                                  <label for="name">First Name</label>  
+                                  <input type="text" class="form-control"  formControlName="firstName" [(ngModel)]="user.firstName">  
+                            </div>  
+
+                            <div class="form-group">  
+                                <label for="name">Last Name</label>  
+                                <input type="text" class="form-control"  formControlName="lastName" [(ngModel)]="user.lastName">  
+                            </div>  
+
+                            <div class="form-group">  
+                                <label for="name">Email</label>  
+                                <input type="text" class="form-control"  formControlName="email" [(ngModel)]="user.email">  
+                            </div>  
+
+                            <div class="form-group">  
+                                <label for="name">Password</label>  
+                                <input type="text" class="form-control"  formControlName="password" [(ngModel)]="user.password">  
+                            </div>  
+                        
+                            <div class="form-group">  
+                                  <label for="name">Status</label>  
+                                  <input type="text" class="form-control" formControlName="status" [(ngModel)]="user.status">  
+                            </div>                                                    
+                    </div>    
+                    <div [hidden]="!isupdated">  
+                        <h4>User Detail Updated!</h4>  
+                    </div>          
+                        
+              </div>  
+                
+              <!-- Modal footer -->  
+              <div class="modal-footer" >  
+                <button type="submit" class="btn btn-success" [hidden]="isupdated">Update</button>  
+                <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="changeisUpdated()">Close</button>  
+              </div>  
+                
+          </form>  
+            </div>  
+          </div>  
+        </div>  
+  

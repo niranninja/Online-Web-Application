@@ -1,0 +1,43 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align:justify;
+}
+img {
+  border-radius: 26%;
+  width:200px;
+  margin-left: 40%;
+  margin-top: 2%;
+}
+.profilename{
+  margin-top: 2%;
+  margin-left: 43%;
+  font-size: 30px;
+}
+.profilename1{
+  margin-top: 2%;
+  margin-left: 44%;
+  font-size: 25px;
+}
+.profilename2{
+  margin-top: 2%;
+  margin-left: 40%;
+  font-size: 25px;
+}
+
