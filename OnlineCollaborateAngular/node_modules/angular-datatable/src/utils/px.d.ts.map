@@ -1,0 +1,1 @@
+{"version":3,"file":"px.d.ts","sources":["px.d.ts"],"names":[],"mappings":"AAAA;;AACA;AACA;;;AACA","sourcesContent":["import { PipeTransform } from '@angular/core';\nexport declare class PixelConverter implements PipeTransform {\n    transform(value: string | number, args: string[]): any;\n}\n"]}

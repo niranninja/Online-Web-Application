@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sources":["../index.ts"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA,GAAG;AACH,cAAc,aAAa,CAAC;AAC5B","sourcesContent":["/**\n * @module\n * @description\n * Entry point for all public APIs of the Angular Module\n */\nexport * from './src/index';\n\ninterface DecoratorInvocation {\n  type: Function;\n  args?: any[];\n}\n"]}

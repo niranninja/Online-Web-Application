@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sources":["index.d.ts"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA","sourcesContent":["/**\n * @module\n * @description\n * Entry point for all public APIs of the Angular Module\n */\nexport * from './src/index';\n"]}
